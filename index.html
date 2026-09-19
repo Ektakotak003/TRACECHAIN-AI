@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TraceChain:AI - Live Bitcoin Investigation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<div class="container">
+    <div class="logo">TraceChain<span>:AI</span></div>
+</div>
+</header>
+
+<main class="container">
+
+<section class="hero">
+    <h1>Live Bitcoin Investigation</h1>
+    <p>Fetch and analyze publicly available Bitcoin blockchain data for a wallet address.</p>
+</section>
+
+<section class="card">
+<h2>🔍 New Investigation</h2>
+<label for="walletInput">Bitcoin Wallet Address</label>
+<input id="walletInput" type="text" placeholder="Enter Bitcoin wallet address">
+<button id="trackBtn" class="track" onclick="startInvestigation()">Start Live Investigation</button>
+<div id="status" class="status"></div>
+</section>
+
+<section id="results" class="results">
+
+<div class="card">
+<h2>📌 Wallet</h2>
+<div id="walletAddress" class="address-box">-</div>
+</div>
+
+<div class="card">
+<h2>📊 Live Blockchain Analytics</h2>
+<div class="stats">
+<div class="stat"><div class="stat-title">Confirmed Transactions</div><div id="txCount" class="stat-value">-</div></div>
+<div class="stat"><div class="stat-title">Total Received</div><div id="received" class="stat-value green">-</div></div>
+<div class="stat"><div class="stat-title">Total Sent</div><div id="sent" class="stat-value yellow">-</div></div>
+<div class="stat"><div class="stat-title">Current Balance</div><div id="balance" class="stat-value green">-</div></div>
+</div>
+</div>
+
+<div class="card">
+<h2>🔗 Transaction Flow</h2>
+<div class="flow">
+<div class="wallet"><strong id="sourceWallet">Source</strong><small>Investigated Wallet</small></div>
+<div class="arrow">→</div>
+<div class="wallet"><strong id="txWallets">Live Data</strong><small>Recent Transactions</small></div>
+</div>
+</div>
+
+<div class="card">
+<h2>💳 Recent Transactions</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Transaction ID</th><th>Status</th><th>Time</th><th>Amount</th><th>Fee</th></tr></thead>
+<tbody id="transactionTable"></tbody>
+</table>
+</div>
+</div>
+
+<div class="card">
+<h2>🧠 On-Chain Indicators</h2>
+<div id="analysis" class="report">No analysis yet.</div>
+<div class="disclaimer">This dashboard reports observable blockchain data. It does not by itself prove that an address is involved in fraud or criminal activity.</div>
+</div>
+
+<div class="card">
+<h2>📄 Investigation Report</h2>
+<div id="report" class="report">Run an investigation to generate the report.</div>
+<button class="refresh" onclick="downloadReport()">⬇ Download Report</button>
+</div>
+
+</section>
+</main>
+
+<footer>TraceChain:AI • Live Bitcoin Blockchain Analytics</footer>
+<script src="script.js"></script>
+</body>
+</html>
